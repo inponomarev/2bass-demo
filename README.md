@@ -18,4 +18,30 @@ Demo example for [2bass](https://github.com/CourseOrchestra/2bass).
 ```
  bass apply <path-to-bass.properties-file>
 ```
+
+Or, if bass.properties is in the same folder with bass executable, you can simply run
+
+```
+ bass apply
+```
+
+If everything goes well, the output should look like
+
+![Successful update](3_update_success.png)
  
+## EXEC NATIVE sections
+ 
+Note EXEC NATIVE sections in this example. This is where any database-specific code can be put. The syntax is:
+
+```
+ (EXEC|EXECUTE)  NATIVE (ORACLE|POSTGRESQL|MSSQL|H2) (BEFORE|AFTER) --{{
+   ...NATIVE CODE GOES HERE...
+ --}};
+```
+
+BEFORE/AFTER scripts are executed before/after the automated update.
+
+Everything between --{{ and --}} is passed to RDBMS without modification. In fact, CelestaSQL parser treats --{{..--}} block as a special lexem.
+
+Note the semicolon in the end: this is mandatory statement separator, like for any other CelestaSQL statement.
+
