@@ -16,13 +16,7 @@ Demo example for [2bass](https://github.com/CourseOrchestra/2bass).
 3. Run 
 
 ```
- bass apply <path-to-bass.properties-file>
-```
-
-Or, if bass.properties is in the same folder with bass executable, you can simply run
-
-```
- bass apply
+ bass apply --propertiesFile=<path-to-bass.properties-file>
 ```
 
 If everything goes well, the output should look like
