@@ -23,9 +23,10 @@ CREATE TABLE OrderLine(
   CONSTRAINT Idx_OrderLine PRIMARY KEY (order_id, line_no)
 );
 
+CREATE SEQUENCE test_id;
 
 CREATE TABLE test (
-  id INT NOT NULL IDENTITY PRIMARY KEY,
+  id INT NOT NULL DEFAULT NEXTVAL(test_id) PRIMARY KEY,
   desc VARCHAR(10)
 );
 
